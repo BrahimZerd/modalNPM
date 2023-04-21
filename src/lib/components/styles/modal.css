@@ -1,0 +1,33 @@
+#modalOverlay {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.8);
+    z-index:9999;
+  }
+  
+  #modal {
+    position:fixed;
+    z-index:9999;
+    width:60%;
+    top:55%;
+    left:50%;
+    padding:15px;
+    text-align:center;
+    background-color:#fafafa;
+    border-radius: 15px;
+    box-sizing:border-box;
+    opacity:0;
+    padding-top: 5vh;
+    transform: translate(-50%,-50%);  
+    transition:all 1050ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #modalOverlay.modal-open #modal {
+    opacity:1;
+    top:50%;
+  }
