@@ -27,6 +27,10 @@ Install my-project with npm
   
  text = 'use string to put the message you want to display in the modal'
  close = {the function you want to put in the modal, generally i use useState to display it}
+ 
+ Add these lines on in the open function => 
+ document.getElementById('modal').classList.add('modal-open')
+ document.getElementById('modalOverlay').style.display ="block"
 ```
     
 ## Documentation
