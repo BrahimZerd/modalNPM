@@ -20,19 +20,32 @@ Install my-project with npm
 
  there is 4 params inside the modal to use:
 
- className = {display the classname you want, i give a css file with the classname to
- to have a first basic modal}
 
- style = {inline style if you want to use it in the component}
-  
- text = 'use string to put the message you want to display in the modal'
- close = {the function you want to put in the modal, generally i use useState to display it}
- 
- Add these lines on in the open function => 
- document.getElementById('modal').classList.add('modal-open')
- document.getElementById('modalOverlay').style.display ="block"
+ use the component in that way : 
+    exemple:
+
+   <Modal
+    text='Thank you',
+    />
+
 ```
     
+## Props Reference
+
+#### How to use the props and the event associated
+
+
+
+| Props | Event                |
+| :-------- |  :------------------------- |
+| className |display the classname you want, i give a css file with the classname to have a first basic modal |
+| style | inline style if you to use it in the component |
+| text | 'use string to put the message you want to display in the modal' |
+| close |{the function you want to put in the modal, generally i use useState to display it} |
+
+
+
+
 ## Documentation
 
 The css file can be import from that way :
@@ -42,7 +55,7 @@ The css file can be import from that way :
 
 
 ```javascript
-import ModalCSS from 'modal-weather/dist/components/styles/modal.css'
+import 'modal-weather/dist/components/styles/modal.css'
 
 ```
 
