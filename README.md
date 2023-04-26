@@ -48,7 +48,11 @@ Install my-project with npm
 
 ## Documentation
 
-The css file can be import from that way :
+The css can be import through the css file inside the package.
+
+And the modal can be display in that way.
+
+for an exemple : just change the Form component by a button event with openModal onclick action:
 
 
 
@@ -56,7 +60,58 @@ The css file can be import from that way :
 
 ```javascript
 import 'modal-weather/dist/components/styles/modal.css'
+import React from 'react';
+import '../App.css';
+import Modal from 'modal-weather/dist/components/modal'
+import { useState } from 'react';
 
+
+const ModalPage =()=> {
+  const [modalOpen, SetModal] = useState(false)
+
+  const closeModal = () => {
+      SetModal(false)
+      
+    }
+  
+  
+  const openModal =(e)=> {
+    e.preventDefault()
+    SetModal(true)
+    setTimeout(() => {
+    document.getElementById('modal').classList.add('modal-open')
+    document.getElementById('modalOverlay').style.display ="block"},)
+}
+
+  
+  return (
+    modalOpen ? 
+      <div id="App">
+        <Modal
+          className={'modal'}
+          style={{opacity: '100',color: "black"}}
+          text={"Employee Successfully Created !"}
+         close={closeModal}/>
+        <button onClick={openModal}>Open</button>
+      </div> 
+    : 
+    <div>
+    <div id="App" style={{display: 'none'}} >  
+      <Modal
+        className={'modal'}
+        style={{opacity: '100',}}
+        text={"Employee Successfully Created !"}
+        close={closeModal}/>
+    </div> 
+    <div>       
+    <button onClick={openModal}>Open</button>
+  </div> 
+  </div>
+      
+  );
+}
+
+export default ModalPage;
 ```
 
 there is a basic style for the modal centered and background opacity.
